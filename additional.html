@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional</title>
+    <link rel="stylesheet" href="mountains.css">
+</head>
+<body>
+    <nav class="site-nav" aria-label="Site navigation">
+        <a class="nav-link" href="aboutme.html">About Me</a>
+        <a class="nav-link" href="mountains.html">Gallery</a>
+        <a class="nav-link active" href="additional.html">Additional</a>
+    </nav>
+    <a class="nav-link professional-link" href="startbootstrap-grayscale-gh-pages/index.html">Professional</a>
+
+    <main class="page video-page">
+        <section class="intro video-intro">
+            <span class="eyebrow">Video</span>
+            <h1>3 Hours of Hiking</h1>
+            <p>
+                Although this is not a video of me, I would love to visit each of these locations!
+            </p>
+        </section>
+
+        <section class="video-card" aria-label="Featured YouTube video">
+            <div class="video-frame">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/PyQQJWmV1LE?si=EmtxHceHzwripMPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="tableau-card" aria-label="Plan your Washington hike Tableau visualization">
+            <div class="tableau-copy">
+                <span class="eyebrow">Trail Planner</span>
+                <h2>Plan Your WA Hike</h2>
+                <p>Use this interactive Tableau guide to explore hikes in Washington.</p>
+            </div>
+            <div class="tableau-frame">
+                <div class="tableauPlaceholder" id="viz1776847496287">
+                    <noscript>
+                        <a href="#">
+                            <img alt="Plan Your WA Hike" src="https://public.tableau.com/static/images/Pl/PlanyourhikeinWashington/PlanYourWAHike/1_rss.png">
+                        </a>
+                    </noscript>
+                    <object class="tableauViz">
+                        <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F">
+                        <param name="embed_code_version" value="3">
+                        <param name="site_root" value="">
+                        <param name="name" value="PlanyourhikeinWashington/PlanYourWAHike">
+                        <param name="tabs" value="no">
+                        <param name="toolbar" value="yes">
+                        <param name="static_image" value="https://public.tableau.com/static/images/Pl/PlanyourhikeinWashington/PlanYourWAHike/1.png">
+                        <param name="animate_transition" value="yes">
+                        <param name="display_static_image" value="yes">
+                        <param name="display_spinner" value="yes">
+                        <param name="display_overlay" value="yes">
+                        <param name="display_count" value="yes">
+                        <param name="language" value="en-US">
+                    </object>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const divElement = document.getElementById("viz1776847496287");
+        const vizElement = divElement.getElementsByTagName("object")[0];
+
+        if (divElement.offsetWidth > 800) {
+            vizElement.style.width = "800px";
+            vizElement.style.height = "1127px";
+        } else if (divElement.offsetWidth > 500) {
+            vizElement.style.width = "800px";
+            vizElement.style.height = "1127px";
+        } else {
+            vizElement.style.width = "100%";
+            vizElement.style.height = "1427px";
+        }
+
+        const scriptElement = document.createElement("script");
+        scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+</body>
+</html>
