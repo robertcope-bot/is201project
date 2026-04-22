@@ -5,6 +5,10 @@
     --custom-ink: #21363f;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 #mainNav {
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.78);
@@ -212,6 +216,39 @@
 
 .contact-section {
     padding-bottom: 5rem;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1rem;
+    border-radius: 0.35rem;
+    color: #ffffff;
+    background: var(--custom-accent);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+    color: #ffffff;
+    background: var(--custom-accent-deep);
+    transform: translateY(-1px);
+}
+
+.page-anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .contact-section .card hr,
