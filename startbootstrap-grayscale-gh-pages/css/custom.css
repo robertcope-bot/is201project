@@ -1,0 +1,240 @@
+:root {
+    --custom-accent: #7d8f73;
+    --custom-accent-deep: #4b6253;
+    --custom-sand: #f3ede2;
+    --custom-ink: #21363f;
+}
+
+#mainNav {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 10px 30px rgba(16, 30, 36, 0.1);
+}
+
+#mainNav .navbar-brand,
+#mainNav .nav-link {
+    color: var(--custom-ink);
+}
+
+#mainNav .navbar-brand:hover,
+#mainNav .navbar-brand:focus,
+#mainNav .nav-link:hover,
+#mainNav .nav-link:focus {
+    color: var(--custom-accent-deep);
+}
+
+.masthead::before {
+    background: linear-gradient(to bottom, rgba(17, 24, 29, 0.38) 0%, rgba(17, 24, 29, 0.62) 75%, rgba(10, 10, 10, 0.88) 100%);
+}
+
+.btn-primary {
+    background-color: var(--custom-accent);
+    border-color: var(--custom-accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--custom-accent-deep);
+    border-color: var(--custom-accent-deep);
+}
+
+.hero-adventure-card {
+    width: min(100%, 520px);
+    margin: 0 auto;
+    padding: 1.1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+}
+
+.hero-adventure-card p {
+    margin: 0 0 1rem;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-adventure-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 190px;
+    padding: 0.95rem 1.4rem;
+    border-radius: 999px;
+    background: var(--custom-accent);
+    color: #ffffff;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.hero-adventure-link:hover {
+    background: var(--custom-accent-deep);
+    color: #ffffff;
+}
+
+.about-section {
+    background: linear-gradient(180deg, #11191d 0%, #1a2b31 100%);
+}
+
+.projects-section {
+    background: linear-gradient(180deg, #f5f1e9 0%, #ece5d8 100%);
+}
+
+.projects-section .featured-text {
+    border-left-color: var(--custom-accent);
+}
+
+.projects-section img {
+    border-radius: 0.4rem;
+    box-shadow: 0 18px 40px rgba(17, 34, 40, 0.14);
+}
+
+.resume-section-custom {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #11191d 0%, #1a2328 100%);
+}
+
+.resume-shell {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 2.25rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.resume-top {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    text-align: center;
+}
+
+.resume-kicker {
+    color: var(--custom-accent);
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.resume-heading {
+    margin: 0;
+    color: #ffffff;
+    font-family: "Varela Round", sans-serif;
+}
+
+.resume-meta,
+.resume-block p,
+.resume-block li {
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.resume-meta a {
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.resume-block + .resume-block {
+    margin-top: 1.75rem;
+}
+
+.resume-block h3 {
+    margin-bottom: 1rem;
+    color: var(--custom-accent);
+    font-size: 0.92rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.resume-block {
+    padding: 1.4rem 1.5rem;
+    border-radius: 0.9rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.resume-item + .resume-item {
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resume-item-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.35rem;
+    color: #ffffff;
+}
+
+.resume-item p,
+.resume-grid p {
+    margin-bottom: 0.5rem;
+}
+
+.resume-item ul {
+    margin-bottom: 0;
+}
+
+.resume-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.75rem;
+}
+
+.resume-grid .resume-block {
+    margin-top: 0;
+}
+
+.project {
+    background: linear-gradient(180deg, #1a2024 0%, #0d1114 100%) !important;
+}
+
+.adventure-callout {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 2.25rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+}
+
+.adventure-link {
+    min-width: 240px;
+}
+
+.contact-section .card {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+}
+
+.contact-section {
+    padding-bottom: 5rem;
+}
+
+.contact-section .card hr,
+.text-primary {
+    color: var(--custom-accent) !important;
+    border-color: var(--custom-accent) !important;
+}
+
+.footer {
+    color: rgba(255, 255, 255, 0.72) !important;
+}
+
+@media (max-width: 991.98px) {
+    #mainNav {
+        background: rgba(255, 255, 255, 0.94);
+    }
+
+    .resume-item-head {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .resume-grid {
+        grid-template-columns: 1fr;
+    }
+}
