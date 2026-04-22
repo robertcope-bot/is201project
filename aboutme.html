@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="mountains.css">
+    <style>
+        .page.about-page {
+            grid-template-columns: 1fr;
+            max-width: 860px;
+        }
+
+        .about-card {
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(12px);
+            background: var(--mist);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 24px 60px var(--shadow);
+            border-radius: 30px;
+            padding: 40px;
+            display: grid;
+            gap: 26px;
+        }
+
+        .about-copy {
+            display: grid;
+            gap: 18px;
+        }
+
+        .about-copy p {
+            margin: 0;
+            font-size: 1.06rem;
+            line-height: 1.8;
+            color: var(--muted);
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .about-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .about-photo {
+            margin: 0;
+            min-height: 260px;
+            overflow: hidden;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.34);
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .highlight {
+            padding: 18px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.42);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.38);
+        }
+
+        .highlight-label {
+            margin: 0 0 8px;
+            font-size: 0.76rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .highlight-value {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        @media (max-width: 860px) {
+            .about-card {
+                padding: 24px;
+            }
+
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .about-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .about-photo {
+                min-height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="site-nav" aria-label="Site navigation">
+        <a class="nav-link active" href="aboutme.html">About Me</a>
+        <a class="nav-link" href="mountains.html">Gallery</a>
+        <a class="nav-link" href="additional.html">Additional</a>
+    </nav>
+    <a class="nav-link professional-link" href="startbootstrap-grayscale-gh-pages/index.html">Professional</a>
+    <main class="page about-page">
+        <section class="about-card" aria-label="About me">
+            <div class="about-copy">
+                <span class="eyebrow">About Me</span>
+                <h1>Hi, I’m Robert!</h1>
+                <p>
+                    I enjoy spending time outdoors, taking photos, and spending time with my family. I find a lot of joy in both learning and creating things! This site is a collection of some of my photos and experiences in nature. I hope you enjoy!
+                </p>
+                <p>
+                    This page is a small introduction to who I am: someone who values curiosity.
+                    
+                </p>
+            </div>
+
+            <section class="about-highlights" aria-label="Quick facts">
+                <article class="highlight">
+                    <p class="highlight-label">Interests</p>
+                    <p class="highlight-value">nature, architecture, and philosophy.</p>
+                </article>
+                <article class="highlight">
+                    <p class="highlight-label">Style</p>
+                    <p class="highlight-value">Clean, warm, and simple designs with personality.</p>
+                </article>
+                <article class="highlight">
+                    <p class="highlight-label">Focus</p>
+                    <p class="highlight-value">Helping others learn more about nature through exploration.</p>
+                </article>
+            </section>
+
+            <section class="about-gallery" aria-label="Photo highlights">
+                <figure class="about-photo">
+                    <img src="images/IMG_0118.jpeg" alt="Personal photo 2">
+                </figure>
+                <figure class="about-photo">
+                    <img src="images/IMG_0225.jpeg" alt="Personal photo 3">
+                </figure>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

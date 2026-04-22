@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Gallery</title>
+    <link rel="stylesheet" href="mountains.css">
+</head>
+<body>
+    <nav class="site-nav" aria-label="Site navigation">
+        <a class="nav-link" href="aboutme.html">About Me</a>
+        <a class="nav-link active" href="mountains.html">Gallery</a>
+        <a class="nav-link" href="additional.html">Additional</a>
+    </nav>
+    <a class="nav-link professional-link" href="startbootstrap-grayscale-gh-pages/index.html">Professional</a>
+    <main class="page">
+        <section class="intro">
+            <span class="eyebrow">Alpine Memories</span>
+            <h1>Mountain Gallery</h1>
+            <p>
+                A rotating collection of mountain views.
+                The gallery cycles automatically! Jump to any photo with the
+                arrows on each side of the photos or the dots below.
+            </p>
+        </section>
+
+        <section class="gallery-shell" aria-label="Rotating mountain photo gallery">
+            <div class="gallery" id="gallery">
+                <button class="gallery-arrow prev" id="prevButton" type="button" aria-label="Show previous image">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/>
+                    </svg>
+                </button>
+                <button class="gallery-arrow next" id="nextButton" type="button" aria-label="Show next image">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9.5 5.5 16 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/>
+                    </svg>
+                </button>
+                <figure class="slide active">
+                    <img src="images/IMG_6162.jpg" alt="Rocky mountain landscape">
+                </figure>
+                <figure class="slide">
+                    <img src="images/IMG_6055.jpg" alt="Quiet alpine overlook">
+                </figure>
+                <figure class="slide">
+                    <img src="images/IMG_2581.jpg" alt="Sunlit alpine ridge">
+                </figure>
+                <figure class="slide">
+                    <img src="images/IMG_2665.jpg" alt="Peaks under open sky">
+                </figure>
+                <figure class="slide">
+                    <img src="images/IMG_7547.jpg" alt="Snow-dusted mountain scene">
+                </figure>
+                <figure class="slide">
+                    <img src="images/IMG_7558.jpg" alt="High country panorama">
+                </figure>
+                <figure class="slide">
+                    <img src="images/IMG_0108.jpg" alt="Serene summit outlook">
+                </figure>
+                <figure class="slide">
+                    <img src="images/IMG_0058.jpg" alt="Clouds over the mountains">
+                </figure>
+                <figure class="slide">
+                    <img src="images/IMG_0040.jpg" alt="Wide valley and peaks">
+                </figure>
+                <figure class="slide">
+                    <img src="images/IMG_5994.jpg" alt="Mountain light at day’s end">
+                </figure>
+            </div>
+
+            <div class="gallery-footer">
+                <div class="counter" id="counter">01 / 10</div>
+                <div class="dots" id="dots" aria-label="Gallery navigation"></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const slides = Array.from(document.querySelectorAll(".slide"));
+        const counter = document.getElementById("counter");
+        const dotsContainer = document.getElementById("dots");
+        const prevButton = document.getElementById("prevButton");
+        const nextButton = document.getElementById("nextButton");
+        let currentSlide = 0;
+        let intervalId;
+
+        function formatNumber(value) {
+            return String(value).padStart(2, "0");
+        }
+
+        function showSlide(index) {
+            currentSlide = index;
+
+            slides.forEach((slide, slideIndex) => {
+                slide.classList.toggle("active", slideIndex === index);
+            });
+
+            Array.from(dotsContainer.children).forEach((dot, dotIndex) => {
+                dot.classList.toggle("active", dotIndex === index);
+                dot.setAttribute("aria-current", dotIndex === index ? "true" : "false");
+            });
+
+            counter.textContent = `${formatNumber(index + 1)} / ${formatNumber(slides.length)}`;
+        }
+
+        function nextSlide() {
+            showSlide((currentSlide + 1) % slides.length);
+        }
+
+        function prevSlide() {
+            showSlide((currentSlide - 1 + slides.length) % slides.length);
+        }
+
+        function resetInterval() {
+            window.clearInterval(intervalId);
+            intervalId = window.setInterval(nextSlide, 3800);
+        }
+
+        prevButton.addEventListener("click", () => {
+            prevSlide();
+            resetInterval();
+        });
+
+        nextButton.addEventListener("click", () => {
+            nextSlide();
+            resetInterval();
+        });
+
+        slides.forEach((slide, index) => {
+            const dot = document.createElement("button");
+            dot.type = "button";
+            dot.className = "dot";
+            dot.setAttribute("aria-label", `Show image ${index + 1}`);
+            dot.addEventListener("click", () => {
+                showSlide(index);
+                resetInterval();
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowLeft") {
+                prevSlide();
+                resetInterval();
+            }
+
+            if (event.key === "ArrowRight") {
+                nextSlide();
+                resetInterval();
+            }
+        });
+
+        showSlide(0);
+        resetInterval();
+    </script>
+</body>
+</html>

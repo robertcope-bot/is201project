@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking Challenge App</title>
+    <link rel="stylesheet" href="tripplanner.css">
+</head>
+<body>
+    <a class="return-link" href="startbootstrap-grayscale-gh-pages/index.html">Return to Adventure Hub</a>
+
+    <main class="app-shell">
+        <section class="hero">
+            <p class="eyebrow">Hiking Challenge App</p>
+            <h1>Make hiking feel like a game.</h1>
+            <p class="hero-copy">
+                Complete trail challenges, unlock badges, and track your personal progress.
+            </p>
+        </section>
+
+        <section class="dashboard">
+            <article class="stat-card">
+                <span>Total Hikes</span>
+                <strong id="totalHikes">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Miles Logged</span>
+                <strong id="totalMiles">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Elevation</span>
+                <strong id="totalElevation">0 ft</strong>
+            </article>
+            <article class="stat-card">
+                <span>Badges</span>
+                <strong id="badgeCount">0</strong>
+            </article>
+        </section>
+
+        <section class="entry-card" aria-label="Log a hike">
+            <div>
+                <p class="eyebrow">Log A Hike</p>
+                <h2>Add your latest adventure.</h2>
+            </div>
+            <form id="hikeForm">
+                <div class="form-grid">
+                    <label>
+                        Trail Name
+                        <input id="trailName" type="text" placeholder="Emerald Lake Trail" required>
+                    </label>
+                    <label>
+                        Miles
+                        <input id="miles" type="number" min="0.1" step="0.1" placeholder="5.2" required>
+                    </label>
+                    <label>
+                        Elevation Gain
+                        <input id="elevation" type="number" min="0" step="50" placeholder="1200" required>
+                    </label>
+                    <label>
+                        Trail Feature
+                        <select id="feature">
+                            <option value="summit">Summit</option>
+                            <option value="waterfall">Waterfall</option>
+                            <option value="lake">Lake</option>
+                            <option value="forest">Forest</option>
+                            <option value="wildlife">Wildlife</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button class="primary-action" type="submit">Add Hike</button>
+                    <button class="secondary-action" id="resetProgress" type="button">Reset Progress</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel">
+                <div class="panel-heading">
+                    <p class="eyebrow">Daily Goals</p>
+                    <h2>Today's 5 goals</h2>
+                </div>
+                <div class="challenge-list" id="challengeList"></div>
+            </article>
+
+            <article class="panel">
+                <div class="panel-heading">
+                    <p class="eyebrow">Trail Log</p>
+                    <h2>Recent hikes</h2>
+                </div>
+                <ul class="trail-log" id="trailLog"></ul>
+            </article>
+        </section>
+
+        <section class="panel badge-panel">
+            <div class="panel-heading">
+                <p class="eyebrow">Badges</p>
+                <h2>Badge collection</h2>
+            </div>
+            <div class="badge-grid" id="badgeGrid"></div>
+        </section>
+    </main>
+
+    <div class="badge-tooltip" id="badgeTooltip" role="status" aria-live="polite"></div>
+    <div class="modal-backdrop" id="resetModal" aria-hidden="true">
+        <section class="reset-modal" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle">
+            <p class="eyebrow">Reset Progress</p>
+            <h2 id="resetModalTitle">Are you sure?</h2>
+            <p>
+                This will clear your logged hikes, badge progress, and trail log.
+            </p>
+            <div class="modal-actions">
+                <button class="secondary-action" id="cancelReset" type="button">Keep Progress</button>
+                <button class="danger-action" id="confirmReset" type="button">Reset Progress</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="tripplanner.js"></script>
+</body>
+</html>

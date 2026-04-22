@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="mountains.css">
+    <style>
+        body {
+            padding: 40px 18px;
+        }
+
+        .page.resume-page {
+            grid-template-columns: 1fr;
+            max-width: 920px;
+        }
+
+        .resume-card {
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(12px);
+            background: rgba(248, 244, 236, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            box-shadow: 0 24px 60px var(--shadow);
+            border-radius: 28px;
+            padding: 42px;
+        }
+
+        .resume-sheet {
+            background: rgba(255, 255, 255, 0.76);
+            border-radius: 20px;
+            padding: 38px 40px;
+            box-shadow: inset 0 0 0 1px rgba(32, 66, 85, 0.08);
+        }
+
+        .resume-header {
+            text-align: center;
+            padding-bottom: 18px;
+            border-bottom: 2px solid rgba(23, 48, 64, 0.14);
+        }
+
+        .resume-name {
+            margin: 0;
+            font-size: clamp(2.1rem, 4vw, 3.2rem);
+            line-height: 1;
+            letter-spacing: 0.02em;
+        }
+
+        .resume-contact {
+            margin: 12px 0 0;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        .resume-contact a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(23, 48, 64, 0.18);
+        }
+
+        .resume-section {
+            margin-top: 28px;
+        }
+
+        .resume-section h2 {
+            margin: 0 0 12px;
+            font-size: 1rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .resume-entry {
+            padding: 12px 0;
+            border-top: 1px solid rgba(23, 48, 64, 0.12);
+        }
+
+        .resume-entry:first-of-type {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .entry-heading {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 4px;
+        }
+
+        .entry-title {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .entry-date {
+            margin: 0;
+            flex-shrink: 0;
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        .entry-subtitle {
+            margin: 0 0 8px;
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        .resume-list {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        .resume-list li + li {
+            margin-top: 4px;
+        }
+
+        .skills-line {
+            margin: 0;
+            color: var(--text);
+            line-height: 1.75;
+        }
+
+        @media (max-width: 860px) {
+            .resume-card {
+                padding: 20px;
+            }
+
+            .resume-sheet {
+                padding: 26px 22px;
+            }
+
+            .entry-heading {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="site-nav" aria-label="Site navigation">
+        <a class="nav-link" href="aboutme.html">About Me</a>
+        <a class="nav-link" href="mountains.html">Gallery</a>
+        <a class="nav-link" href="additional.html">Additional</a>
+    </nav>
+    <a class="nav-link professional-link" href="startbootstrap-grayscale-gh-pages/index.html">Professional</a>
+    <main class="page resume-page">
+        <section class="resume-card" aria-label="Resume page">
+            <div class="resume-sheet">
+                <header class="resume-header">
+                    <h1 class="resume-name">Robert Cope</h1>
+                    <p class="resume-contact">
+                        (801) 471-7495 |
+                        <a href="mailto:rcope1@byu.edu">rcope1@byu.edu</a> |
+                        <a href="https://www.linkedin.com/in/robert-cope-859596383/" target="_blank" rel="noreferrer">LinkedIn</a>
+                    </p>
+                </header>
+
+                <section class="resume-section" aria-label="Education">
+                    <h2>Education</h2>
+                    <article class="resume-entry">
+                        <div class="entry-heading">
+                            <p class="entry-title">Brigham Young University, Marriott School of Business</p>
+                            <p class="entry-date">Aug 2022 - Present</p>
+                        </div>
+                        <p class="entry-subtitle">Bachelor of Science in Pre-Business, Minor in International Relations | Provo, Utah</p>
+                        <ul class="resume-list">
+                            <li>3.83/4.00 GPA.</li>
+                            <li>Continuing Student Academic Scholarship and Academic Scholarship recipient.</li>
+                            <li>Aspiring accounting major; accepted as a research assistant for the school of business.</li>
+                        </ul>
+                    </article>
+                    <article class="resume-entry">
+                        <div class="entry-heading">
+                            <p class="entry-title">Hillcrest High School</p>
+                            <p class="entry-date">Aug 2018 - May 2022</p>
+                        </div>
+                        <p class="entry-subtitle">High School Degree | Midvale, Utah</p>
+                        <ul class="resume-list">
+                            <li>3.52/4.00 GPA.</li>
+                            <li>Participated in choir, theater, mountain biking, and mathematics competitions.</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="resume-section" aria-label="Experience">
+                    <h2>Experience</h2>
+                    <article class="resume-entry">
+                        <div class="entry-heading">
+                            <p class="entry-title">Research Assistant</p>
+                            <p class="entry-date">Sep 2025 - Present</p>
+                        </div>
+                        <p class="entry-subtitle">Brigham Young University | Provo, Utah</p>
+                        <ul class="resume-list">
+                            <li>Collaborated with a team to edit and publish a textbook on international marketing.</li>
+                            <li>Developed research skills in reading, interpreting, and formatting data in Excel spreadsheets.</li>
+                        </ul>
+                    </article>
+
+                    <article class="resume-entry">
+                        <div class="entry-heading">
+                            <p class="entry-title">Warehouse Clerk</p>
+                            <p class="entry-date">Apr 2020 - Aug 2022</p>
+                        </div>
+                        <p class="entry-subtitle">Liberty Mountain | Sandy, Utah</p>
+                        <ul class="resume-list">
+                            <li>Worked with teams of 5-20 people to locate, scan, pack, and ship customer orders within 2 business days.</li>
+                            <li>Maintained less than 1% error rate while packing orders and was promoted 3 times for accuracy and discipline.</li>
+                            <li>Coordinated with production, management, IT, and retail teams to resolve customer needs quickly.</li>
+                        </ul>
+                    </article>
+
+                    <article class="resume-entry">
+                        <div class="entry-heading">
+                            <p class="entry-title">Lawn Mowing</p>
+                            <p class="entry-date">Jun 2019 - Aug 2020</p>
+                        </div>
+                        <p class="entry-subtitle">Self-Employed | Sandy, Utah</p>
+                        <ul class="resume-list">
+                            <li>Managed 3 lawns weekly and provided landscaping services for customers.</li>
+                            <li>Communicated with 3-10 customers weekly in a sales setting, including negotiating service needs.</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="resume-section" aria-label="Leadership and Service">
+                    <h2>Leadership &amp; Service</h2>
+                    <article class="resume-entry">
+                        <div class="entry-heading">
+                            <p class="entry-title">Church of Jesus Christ of Latter-day Saints</p>
+                            <p class="entry-date">Jul 2023 - Aug 2025</p>
+                        </div>
+                        <p class="entry-subtitle">Volunteer Representative | Salta, Argentina</p>
+                        <ul class="resume-list">
+                            <li>Served in leadership roles including district leader, zone leader, trainer, and branch president.</li>
+                            <li>Led groups of 5-20 people and developed advanced Spanish language proficiency.</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="resume-section" aria-label="Activities and Honors">
+                    <h2>Awards, Skills &amp; Interests</h2>
+                    <article class="resume-entry">
+                        <ul class="resume-list">
+                            <li>Advanced High rating in Spanish on the OPIc exam.</li>
+                            <li>Eagle Scout, Boy Scouts of America.</li>
+                            <li>High school music listening team ranked 3rd nationally.</li>
+                            <li>Theater program excellence award; team took 1st place in Utah.</li>
+                        </ul>
+                    </article>
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
